@@ -6,7 +6,8 @@
     "start:dev": "nodemon server.js",
     "start:prod": "NODE_ENV=production nodemon server.js",
     "importData": "node dev-data/data/importDevData.js --import",
-    "deleteData": "node dev-data/data/importDevData.js --delete"
+    "deleteData": "node dev-data/data/importDevData.js --delete",
+    "debug": "ndb server.js"
   },
   "keywords": [],
   "author": "",
