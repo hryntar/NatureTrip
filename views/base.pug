@@ -1,4 +1,3 @@
-doctype html
 html
    head 
       meta(charset='UTF-8')
@@ -6,34 +5,12 @@ html
       link(rel='icon', href='/img/favicon.png')
       link(rel='stylesheet', href='/css/style.css')
       link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Lato:300,300i,700')
-      title NatureTrip | Exciting tours for adventurous people
+      title NatureTrip | #{title}
 
    body
-      header.header
-         nav.nav.nav--tours
-            a.nav__el(href='/') All tours
-         .header__logo
-            img(src='/img/logo-white.png' alt='NatureTrip logo')
-         nav.nav.nav--user
-            if user
-               a.nav__el.nav__el--logout Log out
-               a.nav__el(href='/me')
-                  img.nav__user-img(src=`/img/users/${user.photo}` alt=`Photo of ${user.name}`)
-                  span= user.name.split(' ')[0]
-            else
-               a.nav__el(href='/login') Log in
-               a.nav__el.nav__el--cta(href='#') Sign up
-      
-      section.overview
-         h1= tour
-      
-      footer.footer
-         .footer__logo
-            img(src='/img/logo-green.png' alt='NatureTrip logo')
-         ul.footer__nav
-            li: a(href='#') About us
-            li: a(href='#') Download apps
-            li: a(href='#') Become a guide
-            li: a(href='#') Careers
-            li: a(href='#') Contact
-         p.footer__copyright &copy; by hryntar. All rights reserved.
+      include _header
+
+      block content
+         h1 This is a placeholder heading
+
+      include _footer
