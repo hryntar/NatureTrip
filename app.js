@@ -53,7 +53,9 @@ app.use(
 );
 
 app.get('/', (req, res) => {
-  res.status(200).render('base');
+  res.status(200).render('base', {
+    tour: 'The Park Camper',
+  });
 });
 
 app.use('/api/v1/tours', tourRouter);
