@@ -12,19 +12,19 @@ router
   .post(
     authController.restrictTo('user'),
     reviewController.setTourUserIds,
-    reviewController.createReview,
+    reviewController.createReview
   );
 
 router
   .route('/:id')
   .get(reviewController.getReview)
-  .delete(
-    authController.restrictTo('user', 'admin'),
-    reviewController.deleteReview,
-  )
   .patch(
     authController.restrictTo('user', 'admin'),
-    reviewController.updateReview,
+    reviewController.updateReview
+  )
+  .delete(
+    authController.restrictTo('user', 'admin'),
+    reviewController.deleteReview
   );
 
 module.exports = router;
