@@ -12,7 +12,14 @@ module.exports = class Email {
 
   newTransport() {
     if (process.env.NODE_ENV === 'production') {
-      return 1;
+      return nodemailer.createTransport({
+        host: 'smtp.postmarkapp.com',
+        port: 2525,
+        auth: {
+          user: process.env.POSTMARK_TOKEN,
+          pass: process.env.POSTMARK_TOKEN
+        }
+      });
     }
 
     return nodemailer.createTransport({
